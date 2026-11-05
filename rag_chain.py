@@ -68,10 +68,11 @@ def load_qa_chain(chat_history: list, mode: str = "smart"):
 
     # ── LLM ───────────────────────────────────────────────
     llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
+    model="openai/gpt-oss-120b",
     temperature=0.2,
-    api_key=st.secrets["GROQ_API_KEY"]
+    groq_api_key=st.secrets["GROQ_API_KEY"]
 )
+
 
     # ── History-aware query rewriter ──────────────────────
     contextualize_q_prompt = ChatPromptTemplate.from_messages([
