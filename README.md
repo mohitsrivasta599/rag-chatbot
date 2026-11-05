@@ -1,7 +1,7 @@
 # PDF RAG Chatbot
 
 **Live Demo:** 
-👉 https://rag-chatbot-otcfoy7nvekby3tmmxycba.streamlit.app/
+  https://rag-chatbot-main-uayrefd5rfzwwgbdla87iv.streamlit.app/
 
 🎥 Demo
 
