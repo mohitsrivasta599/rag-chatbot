@@ -1,3 +1,4 @@
+import streamlit as st
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from langchain_community.vectorstores import Chroma
@@ -66,7 +67,11 @@ def load_qa_chain(chat_history: list, mode: str = "smart"):
             history.append(AIMessage(content=msg["content"]))
 
     # ── LLM ───────────────────────────────────────────────
-    llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.2)
+    llm = ChatGroq(
+    model="llama-3.3-70b-versatile",
+    temperature=0.2,
+    api_key=st.secrets["GROQ_API_KEY"]
+)
 
     # ── History-aware query rewriter ──────────────────────
     contextualize_q_prompt = ChatPromptTemplate.from_messages([
